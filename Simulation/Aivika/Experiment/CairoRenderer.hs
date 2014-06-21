@@ -14,8 +14,6 @@
 module Simulation.Aivika.Experiment.CairoRenderer
        (CairoRenderer(..)) where
 
-import System.FilePath
-
 import Graphics.Rendering.Chart
 import Graphics.Rendering.Chart.Backend.Cairo
 
