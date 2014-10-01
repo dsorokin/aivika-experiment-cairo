@@ -33,5 +33,5 @@ instance ChartRenderer CairoRenderer where
   renderableFileExtension (CairoRenderer PDF) = ".pdf"
   
   renderChart (CairoRenderer format) size =
-    renderableToFile (FileOptions size format)
+    flip $ renderableToFile (FileOptions size format)
 
