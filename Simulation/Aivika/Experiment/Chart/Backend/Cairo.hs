@@ -2,7 +2,7 @@
 {-# LANGUAGE MultiParamTypeClasses #-}
 
 -- |
--- Module     : Simulation.Aivika.Experiment.CairoRendering
+-- Module     : Simulation.Aivika.Experiment.Chart.Backend.Cairo
 -- Copyright  : Copyright (c) 2012-2014, David Sorokin <david.sorokin@gmail.com>
 -- License    : BSD3
 -- Maintainer : David Sorokin <david.sorokin@gmail.com>
@@ -13,7 +13,7 @@
 -- for rendering charts with simulation results.
 --
 
-module Simulation.Aivika.Experiment.CairoRendering
+module Simulation.Aivika.Experiment.Chart.Backend.Cairo
        (CairoRenderer(..)) where
 
 import Graphics.Rendering.Chart

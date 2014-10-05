@@ -18,7 +18,7 @@ tested-with:     GHC == 7.8.3
 
 library
 
-    exposed-modules: Simulation.Aivika.Experiment.CairoRendering
+    exposed-modules: Simulation.Aivika.Experiment.Chart.Backend.Cairo
 
     build-depends:   base >= 3 && < 6,
                      Chart >= 1.3.1,
