@@ -25,16 +25,7 @@ import Simulation.Aivika.Experiment.Chart
 -- | This renderer uses the Chart-cairo library based on Cairo for rendering charts with simulation results.
 data CairoRenderer = CairoRenderer FileFormat
 
--- | The class of the Cairo-based renderers is a sub-class of the charting renderers.
-class WebPageCharting r => CairoRendering r
-
-instance ExperimentRendering CairoRenderer WebPageWriter where
-
-  renderExperiment e r = renderExperiment e WebPageRenderer
-
-instance WebPageRendering CairoRenderer
-
-instance WebPageCharting CairoRenderer where
+instance ChartRendering CairoRenderer where
 
   renderableChartExtension (CairoRenderer PNG) = ".png"
   renderableChartExtension (CairoRenderer SVG) = ".svg"
@@ -43,5 +34,3 @@ instance WebPageCharting CairoRenderer where
   
   renderChart (CairoRenderer format) size =
     renderableToFile (FileOptions size format)
-
-instance CairoRendering CairoRenderer
