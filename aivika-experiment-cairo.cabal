@@ -1,9 +1,13 @@
 name:            aivika-experiment-cairo
 version:         4.3.1
-synopsis:        Cairo backend for the Aivika simulation library
+synopsis:        Cairo-based charting backend for the Aivika simulation library
 description:
-    This package complements the Aivika and Aivika Experiment packages 
-    and it allows rendering the charts using the Chart-cairo library.
+    This is one of the charting backends for the aivika-experiment-chart [1] package.
+    It allows rendering charts using the Chart-cairo [2] package.
+    .
+    \[1] <http://hackage.haskell.org/package/aivika-experiment-chart>
+    .
+    \[2] <http://hackage.haskell.org/package/Chart-cairo>
     .
 category:        Simulation
 license:         BSD3
