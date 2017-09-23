@@ -16,6 +16,11 @@
 module Simulation.Aivika.Experiment.Chart.Backend.Cairo
        (CairoRenderer(..)) where
 
+import Data.Colour
+import Data.Colour.Names
+
+import Control.Lens
+
 import Graphics.Rendering.Chart
 import Graphics.Rendering.Chart.Backend.Cairo
 
@@ -34,3 +39,30 @@ instance ChartRendering CairoRenderer where
   
   renderChart (CairoRenderer format) size =
     renderableToFile (FileOptions size format)
+
+  renderingLayout (CairoRenderer _) = defaultLayout
+  renderingLayoutLR (CairoRenderer _) = defaultLayoutLR
+
+-- | Default font style.
+defaultFontStyle :: FontStyle
+defaultFontStyle =
+  FontStyle "serif" 13 FontSlantNormal FontWeightNormal (opaque black) 
+
+-- | Default title font style.
+defaultTitleFontStyle :: FontStyle
+defaultTitleFontStyle =
+  FontStyle "serif" 18 FontSlantNormal FontWeightBold (opaque black) 
+
+-- | The default layout.
+defaultLayoutLR :: LayoutLR Double Double Double -> LayoutLR Double Double Double
+defaultLayoutLR layoutlr =
+  layoutlr_title_style .~ defaultTitleFontStyle $
+  layoutlr_all_font_styles .~ defaultFontStyle $
+  layoutlr
+
+-- | The default layout.
+defaultLayout :: Layout Double Double -> Layout Double Double
+defaultLayout layout =
+  layout_title_style .~ defaultTitleFontStyle $
+  layout_all_font_styles .~ defaultFontStyle $
+  layout
